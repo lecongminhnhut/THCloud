@@ -1,0 +1,32 @@
+# --- Python (Backend) ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# --- Firebase & Secrets (Cực kỳ quan trọng) ---
+# Không đẩy các file chứa key bảo mật lên GitHub
+*serviceAccountKey*.json
+.firebase/
+firestore-debug.log
+
+# --- IDEs & Editors ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# --- Frontend ---
+# Nếu sau này dùng npm hoặc node_modules
+node_modules/
+dist/
+.DS_Store
+Thumbs.db
+
+config.js
+

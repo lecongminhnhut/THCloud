@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hồ sơ cá nhân - TH CLOUD</title>
+    <link rel="stylesheet" href="css/cloud.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div
+        class="logo"
+        onclick="window.location.href = 'cloud.html'"
+        style="cursor: pointer"
+      >
+        TH <span>CLOUD</span>
+      </div>
+      <div class="user-info">
+        <button
+          onclick="window.location.href = 'cloud.html'"
+          class="btn-logout"
+        >
+          Quay lại Cloud
+        </button>
+        <button onclick="logout()" class="btn-logout">Đăng xuất</button>
+      </div>
+    </nav>
+
+    <main class="container">
+      <div class="profile-card">
+        <div class="profile-header">
+          <div class="avatar-large" id="profile-avatar-char">?</div>
+          <h2 id="profile-name-display">Đang tải...</h2>
+          <p class="profile-sub">Thông tin tài khoản hệ thống</p>
+        </div>
+
+        <div class="profile-details">
+          <div class="info-group">
+            <label>Email tài khoản</label>
+            <div class="info-box" id="info-email">Đang tải...</div>
+          </div>
+
+          <div class="info-group">
+            <label>Mã định danh (UID)</label>
+            <div
+              class="info-box"
+              id="info-uid"
+              style="font-family: monospace; font-size: 13px"
+            >
+              Đang tải...
+            </div>
+          </div>
+
+          <div class="info-group">
+            <label>Phương thức đăng nhập</label>
+            <div class="info-box" id="info-provider">
+              <span id="provider-text">Đang kiểm tra...</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-footer">
+          <button
+            class="btn-edit-profile"
+            onclick="alert('Tính năng đang phát triển!')"
+          >
+            Cập nhật hồ sơ
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/cloud.js"></script>
+    <script>
+      async function loadProfileData() {
+        const token = localStorage.getItem("token");
+        const API_URL = "http://127.0.0.1:8000";
+
+        if (!token) {
+          window.location.href = "index.html";
+          return;
+        }
+
+        try {
+          // Gọi API /auth/me từ Backend
+          const response = await fetch(`${API_URL}/auth/me`, {
+            headers: { Authorization: `Bearer ${token}` },
+          });
+
+          if (response.ok) {
+            const user = await response.json();
+
+            // Đổ thông tin cơ bản
+            document.getElementById("info-email").innerText = user.email;
+            document.getElementById("info-uid").innerText = user.uid;
+
+            // Xử lý tên và Avatar
+            const namePart = user.email.split("@")[0];
+            document.getElementById("profile-name-display").innerText =
+              namePart.charAt(0).toUpperCase() + namePart.slice(1);
+            document.getElementById("profile-avatar-char").innerText =
+              user.email.charAt(0).toUpperCase();
+
+            // log provider đã lưu ở localStorage để hiển thị
+            const savedProvider = localStorage.getItem("login_provider");
+            const providerText = document.getElementById("provider-text");
+            if (savedProvider === "local") {
+              providerText.innerHTML = "📧 Email & Mật khẩu";
+            } else {
+              providerText.innerHTML = "🌐 Tiếp tục với Google";
+            }
+          }
+        } catch (err) {
+          console.error("Lỗi tải profile:", err);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", loadProfileData);
+    </script>
+  </body>
+</html>

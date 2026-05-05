@@ -1,0 +1,262 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.login-container {
+  background: white;
+  width: 100%;
+  max-width: 450px;
+  padding: 40px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.app-name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.app-name .accent {
+  color: #db342a;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.required {
+  color: #912adb;
+  font-weight: bold;
+  position: absolute;
+  left: -15px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  background-color: #f0f7ff; 
+  font-size: 16px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #adb5bd;
+}
+
+.forgot-password {
+  text-align: right;
+  margin-bottom: 25px;
+}
+
+.forgot-password a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.btn-login-now {
+  width: 100%;
+  background-color: #720615;
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.btn-create-account {
+  width: 100%;
+  background: white;
+  color: #666;
+  border: 1px solid #ced4da;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.divider {
+  margin: 20px 0;
+  color: #999;
+  font-size: 14px;
+  position: relative;
+}
+
+.btn-google {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #ced4da;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.btn-google img {
+  width: 20px;
+}
+
+.footer-links {
+  font-size: 13px;
+  color: #007bff;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: inherit;
+}
+.footer-links .and {
+  color: #999;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.login-container {
+  background: white;
+  width: 100%;
+  max-width: 450px;
+  padding: 40px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.app-name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.app-name .accent {
+  color: #db342a; 
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.required {
+  color: #db342a;
+  font-weight: bold;
+  position: absolute;
+  left: -15px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  background-color: #f0f7ff; 
+  font-size: 16px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #adb5bd;
+}
+
+.forgot-password {
+  text-align: right;
+  margin-bottom: 25px;
+}
+
+.forgot-password a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.btn-login-now {
+  width: 100%;
+  background-color: #db342a;
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.btn-create-account {
+  width: 100%;
+  background: white;
+  color: #666;
+  border: 1px solid #ced4da;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.divider {
+  margin: 20px 0;
+  color: #999;
+  font-size: 14px;
+  position: relative;
+}
+
+.btn-google {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #ced4da;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.btn-google img {
+  width: 20px;
+}
+
+.footer-links {
+  font-size: 13px;
+  color: #007bff;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: inherit;
+}
+.footer-links .and {
+  color: #999;
+}

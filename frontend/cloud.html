@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TH CLOUD - My Boxes</title>
+    <link rel="stylesheet" href="css/cloud.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">TH <span>CLOUD</span></div>
+      <div class="user-info">
+        <span id="user-display"></span>
+        <!-- Avatar mặc định lấy chữ cái đầu, bấm vào để xem profile -->
+        <div
+          id="user-avatar"
+          class="nav-avatar"
+          onclick="window.location.href = 'profile.html'"
+        >
+          ?
+        </div>
+          <button onclick="logout()" class="btn-logout">Đăng xuất</button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <!-- Cụm cố định header -->
+      <div class="header-controls">
+        <!-- Thanh Tìm Kiếm -->
+        <section class="search-section">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Tìm kiếm nội dung hoặc link..."
+            oninput="searchBoxes()"
+          />
+        </section>
+
+        <!-- Lọc theo ngày -->
+        <section class="search-controls">
+          <div class="date-filter">
+            <label for="date-input">Lọc theo ngày:</label>
+            <input type="date" id="date-input" onchange="filterBoxes()" />
+            <button onclick="clearDate()" class="btn-clear-date">
+              Xóa ngày
+            </button>
+          </div>
+        </section>
+      </div>
+
+      <!-- Lưới hiển thị các Box -->
+      <div id="boxes-container" class="boxes-grid"></div>
+    </main>
+
+    <!-- Nút dấu cộng nổi (FAB) ở góc dưới bên phải -->
+    <button class="fab-add" onclick="openAddModal()">+</button>
+
+    <!-- Modal để Thêm Box Mới -->
+    <div id="add-modal" class="modal">
+      <div class="modal-content">
+        <h3>Thêm Box Mới</h3>
+        <div class="input-group-vertical">
+          <input
+            type="text"
+            id="box-message"
+            placeholder="Nội dung lời nhắn..."
+          />
+          <input
+            type="url"
+            id="box-link"
+            placeholder="Dán liên kết (https://...)"
+          />
+        </div>
+        <div class="modal-actions">
+          <button onclick="addBox()" class="btn-save">Lưu vào Cloud</button>
+          <button onclick="closeAddModal()" class="btn-cancel">Hủy</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal để Cập nhật Box-->
+    <div id="update-modal" class="modal">
+      <div class="modal-content">
+        <h3>Cập nhật Box</h3>
+        <input type="hidden" id="update-id" />
+        <div class="input-group-vertical">
+          <input
+            type="text"
+            id="update-message"
+            placeholder="Lời nhắn mới..."
+          />
+          <input type="url" id="update-link" placeholder="Link mới..." />
+        </div>
+        <div class="modal-actions">
+          <button onclick="saveUpdate()" class="btn-save">Lưu lại</button>
+          <button onclick="closeModal()" class="btn-cancel">Hủy</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/cloud.js"></script>
+  </body>
+</html>

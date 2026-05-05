@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TH CLOUD - Đăng nhập</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <!-- Tên App -->
+      <h2 class="app-name">TH <span class="accent">CLOUD</span></h2>
+
+      <form id="login-form">
+        <div class="input-group">
+          <span class="required">*</span>
+          <input
+            type="email"
+            id="login-email"
+            placeholder="Email của bạn"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <span class="required">*</span>
+          <input
+            type="password"
+            id="login-password"
+            placeholder="Mật khẩu"
+            required
+          />
+        </div>
+
+        <!-- <div class="forgot-password">
+          <a href="#">Quên mật khẩu?</a>
+        </div> -->
+
+        <button type="submit" class="btn-login-now">Đăng Nhập Ngay</button>
+      </form>
+
+      <button class="btn-create-account" onclick="showSignup()">
+        Tạo tài khoản mới
+      </button>
+
+      <div class="divider">Hoặc</div>
+
+      <!-- Nút Google -->
+      <button id="btn-google" class="btn-google">
+        <img src="img/gg.png" alt="Google" />
+        Tiếp tục với Google
+      </button>
+
+      <div class="footer-links">
+        <a href="#">Điều Khoản Dịch Vụ</a> <span class="and">và</span>
+        <a href="#">Chính Sách Bảo Mật</a>
+      </div>
+    </div>
+    <script src="js/index.js"></script>
+  </body>
+</html>
